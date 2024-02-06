@@ -1,0 +1,21 @@
+@use "../base" as b;
+@use "../base/mixin" as m;
+
+header {
+    background-color: b.$verde;
+    h1{
+        color: b.$blanco;
+    }
+
+    a {
+        color:  b.$blanco;
+        font-size: 2.4rem;
+        &:hover {
+            color: b.$amarillo;
+        }
+    }
+}
+
+.prueba {
+    @include m.header
+}
