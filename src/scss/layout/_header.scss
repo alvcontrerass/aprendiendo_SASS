@@ -5,17 +5,50 @@ header {
     background-color: b.$verde;
     h1{
         color: b.$blanco;
+        text-align: center;
+        @include m.tablet {
+            margin: 0;
+        }
     }
 
     a {
+        display: block;
+        text-align: center;
+        margin-bottom: 1rem;
         color:  b.$blanco;
         font-size: 2.4rem;
+
         &:hover {
             color: b.$amarillo;
         }
     }
+
+    .contenedor {
+        padding-bottom: 1rem;
+    }
+
+    .contenido-header {
+        @include m.tablet {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+            padding-bottom: 1rem;
+            nav {
+                display: flex;
+                align-items: center;
+                a {
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
 }
 
-.prueba {
-    @include m.header
+.navegacion-principal {
+    @include m.tablet {
+        display: flex;
+        gap: 2rem;
+    }
+    
 }

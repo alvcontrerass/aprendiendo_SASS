@@ -1,0 +1,19 @@
+@use "variable" as v;
+
+@mixin smartphone {
+    @media (width>=v.$smartphone) {
+        @content
+    }
+};
+
+@mixin tablet {
+    @media (width>=v.$tablet) {
+        @content
+    }
+};
+
+@mixin pc {
+    @media (width>=v.$pc) {
+        @content
+    }
+}
