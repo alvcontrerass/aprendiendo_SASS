@@ -2,15 +2,18 @@
   "name": "proyecto_js",
   "version": "1.0.0",
   "description": "Proyecto con GLUP SASS y HTML",
+  "type": "module",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "gulp dev"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^5.1.0",
-    "sass": "^1.70.0"
+    "sass": "^1.77.8"
   }
 }
