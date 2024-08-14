@@ -1,4 +1,4 @@
-//Version gulp 4.0.0 y Node con tipeado commonJS
+//Version gulp 4.0.0 y Node con tipeado commonJS *funciona con dependencia gulp-plumber*
 /*const { src, dest, watch } = require('gulp')
 const sass = require("gulp-sass")(require('sass'))
 const plumber = require('gulp-plumber')*/
@@ -22,7 +22,7 @@ import gulpSass from 'gulp-sass'
 const sass = gulpSass(dartSass)
 
 export function css(done) {
-    src('src/scss/**/*.scss').pipe(sass()).pipe(dest("build/css"))
+    src('src/scss/**/*.scss').pipe(sass().on('error', sass.logError)).pipe(dest("build/css"))
     done()
 }
 
