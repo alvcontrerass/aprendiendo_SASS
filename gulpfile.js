@@ -21,11 +21,13 @@ import gulpSass from 'gulp-sass'
 
 const sass = gulpSass(dartSass)
 
+//para reducir tamano de js puedes minificarlo con gulp-terser y agregar un .pipe(terser()) antes de dest
 export function js(done) {
     src('src/js/app.js').pipe(dest('build/js'))
     done()
 }
 
+//en function css puedes reducir el tamano del css minificandolo ocupando outputStyle: 'compressed' dentro de sass()
 export function css(done) {
     src('src/scss/style.scss', {sourcemaps:true}).pipe(sass().on('error', sass.logError)).pipe(dest("build/css", {sourcemaps:'.'}))
     done()

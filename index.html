@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="build/css/style.css">
 </head>
 <body>
-    <header>
+    <header class="header">
         <div class="contenedor contenido-header">
             <h1>Rock & EDM Festival</h1>
-            <nav>
-                <a href="">Line Up</a>
-                <a href="">Galeria</a>
-                <a href="">Boletos</a>
+            <nav class="navegacion-principal">
+                <a href="#lineup">Line Up</a>
+                <a href="#galeria">Galeria</a>
+                <a href="#boletos">Boletos</a>
             </nav>
         </div>
     </header>
@@ -39,7 +39,7 @@
 
     <section class="sobre-festival">
         <div class="imagen">
-            <img src="src/img/imagen_rock.jpg" alt="Imagen sobre festival">
+            <img loading="lazy" width="300" height="200" src="src/img/imagen_rock.jpg" alt="Imagen sobre festival">
         </div>
         <div class="contenido-festival">
             <h2>Rock & EDM Festival</h2>
@@ -163,7 +163,7 @@
 
     <section id="galeria" class="galeria">
         <h3>Galeria</h3>
-        <ul class="galeria-imagenes"></ul>
+        <div class="galeria-imagenes"></div>
     </section>
 
     <section id="boletos" class="contenedor-boletos">
