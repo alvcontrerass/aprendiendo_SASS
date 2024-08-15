@@ -1,0 +1,11 @@
+@use "../base" as b;
+
+.footer {
+    background-color: b.$rosa;
+    padding: 2rem 0;
+    p {
+        margin: 0;
+        color: b.$blanco;
+        text-align: center;
+    }
+}
