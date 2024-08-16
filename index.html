@@ -39,7 +39,11 @@
 
     <section class="sobre-festival">
         <div class="imagen">
-            <img loading="lazy" width="300" height="200" src="src/img/imagen_rock.jpg" alt="Imagen sobre festival">
+            <picture>
+                <source srcset="build/img/imagen_rock.avif" type="image/avif">
+                <source srcset="build/img/imagen_rock.webp" type="image/webp">
+                <img loading="lazy" width="300" height="200" src="build/img/imagen_rock.jpg" alt="Imagen sobre festival">
+            </picture>
         </div>
         <div class="contenido-festival">
             <h2>Rock & EDM Festival</h2>

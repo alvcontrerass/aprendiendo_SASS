@@ -21,14 +21,14 @@ function navegacionFija() {
 function crearGaleria() { //funcion para mostrar las imagenes en la pagina
     const galeria = document.querySelector('.galeria-imagenes')
     const CANTIDAD_IMAGENES = 12
-
+    
     for(let i = 1; i<=CANTIDAD_IMAGENES; i++) {
-        const imagen = document.createElement('IMG')
-        imagen.loading = 'lazy'
-        imagen.width = '300'
-        imagen.height = '200'
-        imagen.src = `src/img/grande/${i}.jpg`
-        imagen.alt = 'Imagenes sobre versiones pasadas del festival'
+        const imagen = document.createElement('PICTURE')
+        imagen.innerHTML = `
+            <source srcset="build/img/reducido/${i}.avif" type="image/avif">
+            <source srcset="build/img/reducido/${i}.webp" type="image/webp">
+            <img loading="lazy" width="200" height="300" src="build/img/reducido/${i}.jpg" alt="imagen galeria">
+        `;
 
         //Event handler
         imagen.onclick = function() {
@@ -37,13 +37,37 @@ function crearGaleria() { //funcion para mostrar las imagenes en la pagina
         
         galeria.appendChild(imagen)
     }
-};
+    /* insertar imagenes sin otras extensiones
+    for(let i = 1; i<=CANTIDAD_IMAGENES; i++) {
+        const imagen = document.createElement('IMG')
+        imagen.loading = 'lazy'
+        imagen.width = '300'
+        imagen.height = '200'
+        imagen.src = `src/img/reducido/${i}.jpg`
+        imagen.alt = 'Imagenes sobre versiones pasadas del festival'
+
+        //Event handler
+        imagen.onclick = function() {
+            mostarImagen(i)
+        }
+        
+        galeria.appendChild(imagen)
+    }*/
+}
 
 function mostarImagen(i) { //funcion para mostrar la imagen en grande
+    const imagen = document.createElement('PICTURE')
+    imagen.innerHTML = `
+        <source srcset="build/img/grande/${i}.avif" type="image/avif">
+        <source srcset="build/img/grande/${i}.webp" type="image/webp">
+        <img loading="lazy" width="200" height="300" src="build/img/grande/${i}.jpg" alt="imagen galeria">
+    `;
+    /*Forma de hacerlo sin otras extensiones
     //variables para generar la imagen grande
     const imagen = document.createElement('IMG') //variable crea el elemento IMG
     imagen.src = `src/img/grande/${i}.jpg` //seleccionamos sorce de las imagenes e iteramos con `` templates literals
     imagen.alt = 'Imagenes sobre versiones pasadas del festival' //ingresamos alt a las imagenes iteradas
+    */
 
     //creacion modal
     const modal = document.createElement('DIV') //Variable crea DIV
